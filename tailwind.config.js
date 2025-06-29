@@ -21,14 +21,14 @@ export default {
         harmattan: ["Harmattan", "sans-serif"],
         baloo: ["Baloo Bhaijaan 2", "sans-serif"],
       },
-      animation: {
-        marquee: 'marquee 15s linear infinite',
-      },
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+     keyframes: {
+        'marquee-left': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
+      },
+      animation: {
+        'marquee-left': 'marquee-left 15s linear infinite',
       },
     },
   },
