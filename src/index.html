@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Harmattan:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(50px) scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .animate-in {
+        animation: fadeSlideIn 0.5s ease-out forwards;
+      }
+
+      .slider-container {
+        perspective: 1000px;
+      }
+
+      .card {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        transform-origin: center;
+      }
+      .card-0 {
+        transform: rotateY(-35deg) scale(0.95) !important;
+        opacity: 0.8 !important;
+        margin-left: 15px !important;
+      }
+      .card-1 {
+        transform: rotate3d(0, 1, 0, 45deg);
+      }
+
+      .card-3 {
+        transform: rotate3d(0, 1, 0, 65deg);
+      }
+      .card-4 {
+        transform: rotate3d(0, 1, 0, 185deg);
+      }
+
+      .tilt-left {
+        transform: rotateY(-35deg) scale(0.95);
+        opacity: 0.8;
+        margin-left: 15px;
+      }
+
+      .tilt-right {
+        transform: rotateY(35deg) scale(0.95);
+        opacity: 0.8;
+        margin-right: 15px;
+      }
+
+      .active {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+        z-index: 10;
+        margin-top: 180px;
+      }
+
+      @media (max-width: 768px) {
+        .active {
+          margin-top: 0px;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body class="text-right overflow-x-hidden">
+    <header class="">
+      <div class="bg-mainColor py-2 hidden md:block">
+        <div
+          class="container md:justify-center lg:justify-between items-center hidden md:flex-wrap md:flex"
+        >
+          <div
+            class="max-w-[264px] h-[24px] pt-[3px] pb-[2px] flex flex-row items-center gap-[14px]"
+          >
+            <div class="flex items-center gap-[6px]">
+              <img src="./images/call.svg" class="size-4" alt="callIcon" />
+              <p
+                class="font-harmattan max-w-[95px] mx-h-[17px] font-normal text-base leading-none tracking-normal"
+              >
+                +966556754472
+              </p>
+            </div>
+            <span class="flex items-center h-[27px]">
+              <span
+                class="border border-[#1E3231] inline-block rotate-[-90deg] w-[10px]"
+              >
+              </span>
+            </span>
+            <div class="flex items-center gap-[6px]">
+              <img src="./images/mail.svg" class="w-4 h-3" alt="mailIcon" />
+              <p
+                class="font-harmattan max-w-[96px] mx-h-[27px] font-normal text-base leading-none tracking-normal"
+              >
+                Support@salla.sa
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-row items-center justify-end max-w-[887.93px] h-[27.17px] pt-[3px] pb-[2px]"
+          >
+            <ul class="flex flex-row items-center gap-4">
+              <li class="flex flex-row items-center gap-1">
+                <div class="size-4">
+                  <img
+                    class="size-full"
+                    src="./images/lang.svg"
+                    alt="language"
+                  />
+                </div>
+                <p
+                  class="max-w-[61px] max-h-[27px] font-harmattan font-normal text-base leading-none tracking-normal align-middle"
+                >
+                  العربية - رس
+                </p>
+              </li>
+              <li class="flex items-center h-[27px]">
+                <span
+                  class="border border-[#1E3231] inline-block rotate-[-90deg] w-[10px]"
+                >
+                </span>
+              </li>
+              <li>
+                <p
+                  class="max-w-[39px] max-h-[27px] font-[Harmattan] font-normal text-base leading-none tracking-normal align-middle"
+                >
+                  المفضلة
+                </p>
+              </li>
+              <li class="flex items-center h-[27px]">
+                <span
+                  class="border border-[#1E3231] inline-block rotate-[-90deg] w-[10px]"
+                >
+                </span>
+              </li>
+              <li>
+                <p
+                  class="max-w-[143px] max-h-[27px] font-[Harmattan] font-normal text-base leading-none tracking-normal align-middle"
+                >
+                  سياسة الإستبدال أو الاسترجاع
+                </p>
+              </li>
+              <li class="flex items-center h-[27px]">
+                <span
+                  class="border border-[#1E3231] inline-block rotate-[-90deg] w-[10px]"
+                >
+                </span>
+              </li>
+              <li>
+                <p
+                  class="max-w-[54px] max-h-[27px] font-[Harmattan] font-normal text-base leading-none tracking-normal align-middle"
+                >
+                  تواصل معنا
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container flex justify-between items-center flex-row h-[80px]"
+      >
+        <div class="flex items-center justify-between flex-row">
+          <nav class="flex items-center flex-row">
+            <div id="btn-menu" class="size-[40px] ml-[22px] cursor-pointer">
+              <img class="w-full" src="./images//menu.svg" alt="menuIcon" />
+            </div>
+            <ul class="hidden md:flex items-center flex-row gap-[20px]">
+              <li>
+                <a
+                  class="font-harmattan w-[67px] h-[41px] text-secondColor font-normal text-[20px] leading-none tracking-normal"
+                  href="#"
+                >
+                  الرئــيسية
+                </a>
+              </li>
+              <li>
+                <a
+                  class="font-harmattan opacity-70 w-[45px] h-[34px] font-normal text-[20px] leading-none tracking-normal"
+                  href="#"
+                >
+                  المدونة
+                </a>
+              </li>
+              <li>
+                <a
+                  class="font-harmattan opacity-70 w-[63px] h-[34px] font-normal text-[20px] leading-none tracking-normal"
+                  href="#"
+                >
+                  تخفيضات
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="w-[199px] h-[53px]">
+          <img
+            src="./images/glimmerLogo.svg"
+            class="w-full"
+            alt="glimmerLogo"
+          />
+        </div>
+        <div class="flex items-center flex-row gap-[16px]">
+          <div
+            class="bg-[#CE94611F] hover:bg-mainColor flex justify-center items-center overflow-hidden size-[40px] rounded-full"
+          >
+            <img src="./images/search-normal.svg" alt="searchIcon" />
+          </div>
+          <div
+            class="bg-[#CE94611F] hover:bg-mainColor hidden lg:flex justify-center items-center overflow-hidden size-[40px] rounded-full"
+          >
+            <img src="./images/user.svg" alt="userIcon" />
+          </div>
+          <div
+            class="bg-[#CE94611F] hover:bg-mainColor hidden lg:flex justify-center items-center overflow-hidden size-[40px] rounded-full"
+          >
+            <img src="./images/heart.svg" alt="heartIcon" />
+          </div>
+          <div
+            class="bg-mainColor relative flex justify-center items-center size-[40px] rounded-full"
+          >
+            <img src="./images/shopping-cart.svg" alt="shopping-cartIcon" />
+            <span
+              class="absolute size-[20px] rounded-full flex justify-center items-center bg-secondColor top-[-8px] text-white right-[-8px]"
+              >1</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="show-menu"
+        class="bg-secondColor z-[999] w-screen h-screen absolute inset-0 transition-all duration-5000 ease-in-out translate-x-full py-10"
+      >
+        <div class="w-[119px] relative h-[32px] mx-auto">
+          <img
+            src="./images/glimmerLogoWhite.svg"
+            class="w-full"
+            alt="glimmerLogo"
+          />
+        </div>
+        <div
+          id="close-menu"
+          class="absolute cursor-pointer top-9 text-2xl text-white left-[30px]"
+        >
+          x
+        </div>
+        <ul class="flex flex-col px-3 text-white">
+          <li>
+            <div class="flex justify-between px-6 py-3 items-baseline">
+              <a
+                class="w-[46px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+                href="#"
+              >
+                الرئــيسية
+              </a>
+            </div>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <div class="flex justify-between px-6 py-3 items-baseline">
+              <a
+                class="w-[43px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+                href="#"
+              >
+                المدونة
+              </a>
+            </div>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[58px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                تخفيضات
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[37px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                العقود
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[40px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                الخواتم
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[39px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                الأساور
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[48px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                السلاسل
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[43px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                الحلقان
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[82px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                خواتم الخطوبة
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[112px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                اكسسوارات الشعر
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <a
+              class="w-[53px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
+              href="#"
+            >
+              <div class="flex justify-between px-6 py-3 items-baseline">
+                الساعات
+                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section>
+      <div
+        class="bg-secondColor mx-auto h-full xl:h-lvh py-[70px] overflow-hidden relative"
+      >
+        <div
+          class="absolute top-[20px] right-[-20px] md:right-[120px] opacity-10 rotate-[30deg]"
+        >
+          <img
+            class="bg-no-repeat w-[225.57px] h-[275.82px]"
+            src="./images/floor.png"
+            alt="floor"
+          />
+        </div>
+        <div
+          class="absolute opacity-20 w-[175.49px] h-[219.99px] -bottom-16 left-[-80px] md:bottom-64 md:left-4 rotate-[10deg]"
+        >
+          <img
+            class="bg-no-repeat w-[225.57px] h-[275.82px]"
+            src="./images/floor.png"
+            alt="floor"
+          />
+        </div>
+
+        <div class="container">
+          <div
+            class="absolute w-[55px] h-[49px] md:w-[128px] md:h-[130px] lg:left-[6.67%] lg:right-[82.67%] lg:top-[8%] lg:bottom-[80.04%] left-[30%] right-[50%] top-[75%] bottom-[13%]"
+          >
+            <div
+              class="relative w-[55px] h-[49px] md:w-[128px] md:h-[130px] z-10 rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px]"
+            >
+              <div
+                class="w-[55px] h-[49px] md:w-[128px] md:h-[130px] overflow-hidden rounded-tr-[39.56px] rounded-tl-[1px] rounded-br-[1px] rounded-bl-[1px] md:rounded-tr-[92px] md:rounded-tl-[2px] md:rounded-br-[2px] md:rounded-bl-[2px] bg-gray-200"
+              >
+                <img
+                  class="w-full"
+                  src="./images/ain-h-rev.jpg"
+                  alt="shop-list-haver"
+                />
+              </div>
+              <span
+                class="absolute z-10 left-2 -top-2 w-[55px] h-[49px] md:w-[128px] md:h-[130px] border border-white rounded-tr-[39.56px] rounded-tl-[1px] rounded-br-[1px] rounded-bl-[1px] md:rounded-tr-[92px] md:rounded-tl-[2px] md:rounded-br-[2px] md:rounded-bl-[2px] pointer-events-none"
+              ></span>
+            </div>
+          </div>
+
+          <div class="flex items-center flex-col md:gap-8 xl:flex-row">
+            <div
+              class="relative pt-5 ms-10 md:ms-0 w-[299px] h-[327.51px] md:w-[397px] md:h-[503px] z-10 rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px]"
+            >
+              <div
+                class="w-[299px] card-0 h-[327.51px] md:w-[397px] md:h-[503px] overflow-hidden"
+              >
+                <img
+                  class="w-full h-full object-cover rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px]"
+                  src="./images/woman.png"
+                  alt="woman-Image"
+                />
+              </div>
+              <span
+                class="absolute -z-10 -top-3 left-10 w-[299px] h-[327.51px] md:w-[397px] md:h-[503px] border border-white rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px] pointer-events-none"
+              ></span>
+            </div>
+
+            <div class="pt-10">
+              <div class="text-start mt-3">
+                <h2
+                  class="w-[120px] h-[36.39px] md:w-[192px] md:h-[55px] text-mainColor font-harmattan font-normal text-[20px] md:text-[32px] leading-[20px] tracking-normal"
+                >
+                  تألقي بأناقة لا تُنسى
+                </h2>
+                <h1
+                  class="w-[332px] h-[104px] md:w-[749px] md:h-[144px] font-harmattan text-white font-semibold text-[28px] leading-[52px] md:text-[48px] md:leading-[72px] tracking-normal text-right"
+                >
+                  اكـــــتشفي سحــــر
+                  <span class="bg-white text-secondColor">
+                    المجوهـــــــرات
+                  </span>
+                  التي تعــــكس أنــــوثتك
+                </h1>
+
+                <p
+                  class="w-[318px] h-[58.24px] md:w-[591px] md:h-[58px] mt-1 mb-4 text-white font-harmattan font-normal text-[14px] leading-[24px] md:text-[18px] md:leading-[29px] tracking-normal text-right"
+                >
+                  استمتعي بتجربة تسوق فريدة تضم تشكيلات مذهلة من المجوهرات
+                  الراقية، حيث كل قطعة مصممة لتبرز جمالكِ وتضيف لمسة من السحر
+                  إلى كل لحظة في حياتكِ
+                </p>
+              </div>
+              <div class="flex flex-row justify-between gap-4 items-center">
+                <div class="">
+                  <a
+                    href="#"
+                    class="flex w-fit text-sm md:text-lg items-center md:gap-2 border border-beige text-white md:pr-8 p-1 pr-2 md:py-2 rounded-full"
+                  >
+                    اكــــتشف المـــزيد
+                    <span
+                      class="inline-flex items-center bg-white p-1 md:p-2 rounded-full md:mr-3 mr-1"
+                    >
+                      <img
+                        src="./images/arrowDown.svg"
+                        alt="arrowDown"
+                        class="inline-block w-4 md:w-6"
+                      />
+                    </span>
+                  </a>
+                </div>
+
+                <div
+                  class="w-[72.24px] overflow-hidden h-[77.32px] md:w-[198px] md:h-[168px] rounded-tl-[39.56px] rounded-tr-[1px] rounded-br-[1px] rounded-bl-[1px] md:rounded-tl-[92px] md:rounded-tr-[2px] md:rounded-br-[2px] md:rounded-bl-[2px] bg-gray-200"
+                >
+                  <img
+                    class="w-full"
+                    src="./images/hop-list-haver.jpg"
+                    alt="shop-list-haver"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-row my-4 gap-4 items-center">
+                <a class="opacity-20" href="#">
+                  <img
+                    class="w-[38px] h-[8px]md:w-[92px] md:h-[10px]"
+                    src="./images/arrrow-left.svg"
+                    alt="arrrow-left"
+                  />
+                </a>
+                <p
+                  class="w-[35px] h-[59.94px] md:w-[45px] md:h-[72px] font-[Harmattan] font-medium text-[20px] leading-[55.52px] md:text-[26px] md:leading-[72px] tracking-normal text-white text-right"
+                >
+                  3 / 1
+                </p>
+                <a href="#">
+                  <img
+                    class="w-[38px] h-[8px]md:w-[92px] md:h-[10px]"
+                    src="./images/arrrow-right.svg"
+                    alt="arrrow-right"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-2 relative bg-[#F0E5D3]">
+      <img
+        src="images/1.svg"
+        alt="backGround"
+        class="absolute right-0 top-0 opacity-50 w-[300px] -z-10 md:w-auto"
+      />
+      <img
+        src="images/2.svg"
+        alt="backGround"
+        class="absolute right-0 bottom-0 opacity-50 w-[300px] -z-10 md:w-auto"
+      />
+      <img
+        src="images/3.svg"
+        alt="backGround"
+        class="absolute left-0 top-0 opacity-50 w-[300px] -z-10 md:w-auto"
+      />
+      <img
+        src="images/4.svg"
+        alt="backGround"
+        class="absolute left-0 bottom-0 opacity-50 w-[300px] -z-10 md:w-auto"
+      />
+      <img
+        src="images/5.svg"
+        alt="backGround"
+        class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-2/2 opacity-50 w-[300px] md:w-auto"
+      />
+
+      <div class="container main-sub-slider"></div>
+    </section>
+    <section class="py-10 container">
+      <div class="flex items-center justify-center gap-4">
+        <div class="flex-1 h-px bg-[#3E1F043D]"></div>
+        <h2
+          class="text-[24px] leading-[24px] font-harmattan text-[#252525] font-normal text-center whitespace-nowrap"
+        >
+          أحدث المنتجات
+        </h2>
+        <div class="flex-1 h-px bg-[#3E1F043D]"></div>
+      </div>
+
+      <div
+        class="flex flex-row flex-wrap mt-8 md:flex-nowrap gap-[20px] items-center justify-center"
+      >
+        <div
+          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
+        >
+          <img
+            src="./images/new-product1.jpg"
+            alt="الخواتم  "
+            class="rounded-[12px] sub-slider"
+          />
+
+          <div class="flex justify-between items-center">
+            <p
+              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
+            >
+              الخواتم
+            </p>
+
+            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+          </div>
+
+          <p
+            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
+          >
+            خاتم ذهبي مع فص ألماس
+          </p>
+
+          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
+            <span
+              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
+              >500 ر.س</span
+            >
+            <span
+              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
+              >650 ر.س</span
+            >
+          </div>
+        </div>
+        <div
+          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
+        >
+          <img
+            src="./images/new-product2.jpg"
+            alt="الخواتم  "
+            class="rounded-[12px] sub-slider"
+          />
+
+          <div class="flex justify-between items-center">
+            <p
+              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
+            >
+              الخواتم
+            </p>
+
+            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+          </div>
+
+          <p
+            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
+          >
+            خاتم ذهبي مع فص ألماس
+          </p>
+
+          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
+            <span
+              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
+              >500 ر.س</span
+            >
+            <span
+              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
+              >650 ر.س</span
+            >
+          </div>
+        </div>
+        <div
+          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
+        >
+          <img
+            src="./images/new-product3.jpg"
+            alt="الخواتم  "
+            class="rounded-[12px] sub-slider"
+          />
+
+          <div class="flex justify-between items-center">
+            <p
+              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
+            >
+              الخواتم
+            </p>
+
+            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+          </div>
+
+          <p
+            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
+          >
+            خاتم ذهبي مع فص ألماس
+          </p>
+
+          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
+            <span
+              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
+              >500 ر.س</span
+            >
+            <span
+              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
+              >650 ر.س</span
+            >
+          </div>
+        </div>
+        <div
+          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
+        >
+          <img
+            src="./images/new-product4.jpg"
+            alt="الخواتم  "
+            class="rounded-[12px] sub-slider"
+          />
+
+          <div class="flex justify-between items-center">
+            <p
+              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
+            >
+              الخواتم
+            </p>
+
+            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
+              <span>★</span><span>★</span><span>★</span><span>★</span
+              ><span>★</span>
+            </div>
+          </div>
+
+          <p
+            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
+          >
+            خاتم ذهبي مع فص ألماس
+          </p>
+
+          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
+            <span
+              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
+              >500 ر.س</span
+            >
+            <span
+              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
+              >650 ر.س</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <h4
+        class="text-[#252525] font-harmattan py-10 font-normal text-[20px] leading-[32px] md:text-[48px] md:leading-[78px] tracking-[0px]"
+      >
+        يعد جليمر وجهتك المثالية للفخامة والجمال
+        <span
+          ><img
+            class="h-[21px] w-[42px] inline-block rounded-[60px] object-cover"
+            src="./images//glimmer4.jpg"
+            alt="Glimmer"
+        /></span>
+        نقدم مجموعة متنوعة من القطع الراقية
+        <span
+          ><img
+            class="h-[21px] w-[42px] inline-block rounded-[60px] object-cover"
+            src="./images//glimmer3.jpg"
+            alt="Glimmer"
+        /></span>
+        التي تجمع بين التصميم العصري والتقليدي
+        <span
+          ><img
+            class="h-[21px] w-[42px] inline-block rounded-[60px] object-cover"
+            src="./images//glimmer2.jpg"
+            alt="Glimmer"
+        /></span>
+        كل قطعة تُبرز الأناقة وتعكس ذوقك الفريد،
+        <span
+          ><img
+            class="h-[21px] w-[42px] inline-block rounded-[60px] object-cover"
+            src="./images//glimmer1.jpg"
+            alt="Glimmer"
+        /></span>
+        مما يجعلها مثالية لكل مناسبة.
+      </h4>
+    </section>
+
+    <section class="sec-3 bg-secondColor relative pb-10">
+      <img
+        src="images/eventTree2.png"
+        alt="backGround"
+        class="absolute right-0 top-0 opacity-50 w-[300px] z-10 md:w-auto"
+      />
+      <img
+        src="images/eventTree1.png"
+        alt="backGround"
+        class="absolute left-20 bottom-0 opacity-50 w-[300px] z-10 md:w-auto"
+      />
+      <div class="">
+        <div class="text-center text-white">
+          <h4
+            class="font-harmattan font-normal text-[20px] md:text-[24px] opacity-75 pt-6 leading-[48px] tracking-[0px]"
+          >
+            لكل مناسبة، لدينا المجوهرات التي تجعلها لا تُنسى
+          </h4>
+          <h2
+            class="font-harmattan font-bold text-[28px] pb-10 md:text-[48px] leading-[72px] tracking-[0px]"
+          >
+            تســــــــــــوقي أحدث الأقســـام
+          </h2>
+          <!-- 
+          <div class="flex flex-row items-center gap-4 pt-12">
+            <div
+              style="transform: rotate3d(1, 1, 0, 45deg)"
+              class="w-[252px] h-[320px] mb-28 rounded-[16px] overflow-hidden relative bg-black"
+            >
+              <img
+                src="./images/glimmer2.jpg"
+                alt="الأطقم"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
+              >
+                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
+                  الأطقم
+                  <span class="text-sm font-normal">(33 قطعة)</span>
+                </h3>
+                <a href="#" class="text-sm font-harmattan mt-1 underline"
+                  >تسوق الآن</a
+                >
+              </div>
+            </div>
+            <div
+              class="w-[252px] h-[396px] mb-16 rounded-[16px] overflow-hidden relative bg-black"
+            >
+              <img
+                src="./images/glimmer2.jpg"
+                alt="الأطقم"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
+              >
+                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
+                  الأطقم
+                  <span class="text-sm font-normal">(33 قطعة)</span>
+                </h3>
+                <a href="#" class="text-sm font-harmattan mt-1 underline"
+                  >تسوق الآن</a
+                >
+              </div>
+            </div>
+            <div
+              class="w-[252px] h-[396px] rounded-[16px] overflow-hidden relative bg-black"
+            >
+              <img
+                src="./images/glimmer2.jpg"
+                alt="الأطقم"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
+              >
+                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
+                  الأطقم
+                  <span class="text-sm font-normal">(33 قطعة)</span>
+                </h3>
+                <a href="#" class="text-sm font-harmattan mt-1 underline"
+                  >تسوق الآن</a
+                >
+              </div>
+            </div>
+            <div
+              class="w-[252px] h-[396px] mb-16 rounded-[16px] overflow-hidden relative bg-black"
+            >
+              <img
+                src="./images/glimmer2.jpg"
+                alt="الأطقم"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
+              >
+                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
+                  الأطقم
+                  <span class="text-sm font-normal">(33 قطعة)</span>
+                </h3>
+                <a href="#" class="text-sm font-harmattan mt-1 underline"
+                  >تسوق الآن</a
+                >
+              </div>
+            </div>
+            <div
+              class="w-[252px] h-[320px] mb-28 rounded-[16px] overflow-hidden relative bg-black"
+            >
+              <img
+                src="./images/glimmer2.jpg"
+                alt="الأطقم"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
+              >
+                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
+                  الأطقم
+                  <span class="text-sm font-normal">(33 قطعة)</span>
+                </h3>
+                <a href="#" class="text-sm font-harmattan mt-1 underline"
+                  >تسوق الآن</a
+                >
+              </div>
+            </div>
+          </div> -->
+
+          <div
+            class="slider-container flex justify-center items-center overflow-hidden px-4 sm:px-8"
+          >
+            <div
+              id="slider"
+              class="flex gap-4 sm:gap-6 md:gap-8 transition-all duration-500"
+            ></div>
+          </div>
+
+          <div class="flex justify-center gap-4 mt-4">
+            <button
+              onclick="prev()"
+              class="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center transition"
+            >
+              <img src="./images/right.svg" alt="السابق" class="w-4 sm:w-6" />
+            </button>
+            <button
+              onclick="next()"
+              class="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center transition"
+            >
+              <img
+                src="./images/right.svg"
+                alt="التالي"
+                class="rotate-180 w-4 sm:w-6"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-12">
+      <div class="flex flex-col md:flex-row items-center gap-2">
+        <div class="">
+          <div class="text-start md:hidden">
+            <h4
+              class="font-harmattan font-normal text-[20px] md:text-[24px] md:leading-[78px] tracking-[0px] text-[#252525]"
+            >
+              تجارب عملائنا المميزة
+            </h4>
+            <h2
+              class="font-harmattan font-semibold text-[28px] leading-[40px] md:[40px] md:leading-[78px] tracking-[0px] text-[#252525]"
+            >
+              آراء حقيقيـــة تشـــهد على تــــميز خــدمــــتنا
+            </h2>
+          </div>
+          <img
+            src="./images/banner03.jpg"
+            alt="banner03"
+            class="w-[327px] h-[469px] mx-auto md:w-[486px] rounded-tl-[210px] rounded-tr-[210px] md:h-[624px] md:rounded-tl-[270px] md:rounded-tr-[270px] md:rounded-br-none md:rounded-bl-none object-cover"
+          />
+        </div>
+        <div class="">
+          <div class="text-start hidden md:block">
+            <h4
+              class="font-harmattan font-normal text-[20px] md:text-[24px] md:leading-[78px] tracking-[0px] text-[#252525]"
+            >
+              تجارب عملائنا المميزة
+            </h4>
+            <h2
+              class="font-harmattan font-semibold text-[28px] leading-[40px] md:[40px] md:leading-[78px] tracking-[0px] text-[#252525]"
+            >
+              آراء حقيقيـــة تشـــهد على تــــميز خــدمــــتنا
+            </h2>
+          </div>
+          <div
+            class="bg-secondColor mb-4 p-6 rounded-md text-white w-[327px] h-[406px] md:w-[734px] md:h-[385px] mx-auto md:mx-0 relative md:-right-8"
+          >
+            <h2
+              class="font-harmattan font-normal md:text-[24px] md:leading-[35px] tracking-[0px]"
+            >
+              <img class="ps-10" src="./images/quote.png" alt="quote" />
+              لقد كانت تجربتي في هذا المتجر رائعة! التصاميم مذهلة والجودة لا
+              تضاهى. كنت أبحث عن هدية مميزة ، وساعدني فريق العمل بشكل رائع في
+              اختيار القطعة المثالية. كل قطعة مجوهرات كانت مليئة بالأناقة
+              والتفاصيل الدقيقة. خدمة العملاء كانت ممتازة أيضًا، جعلوني أشعر
+              وكأنني في منزلهم. بالتأكيد سأعود للشراء من هنا مرة أخرى.
+              <img
+                class="rotate-180 ms-auto ps-10"
+                src="./images/quote.png"
+                alt="quote"
+              />
+            </h2>
+
+            <div class="flex gap-4">
+              <img
+                class="size-16 rounded-full"
+                src="./images/person.jpg"
+                alt="person"
+              />
+              <div class="">
+                <h4
+                  class="font-harmattan font-normal md:text-[32px] md:leading-[31px] tracking-[0px] text-center text-mainColor"
+                >
+                  منا شفيق
+                </h4>
+                <p
+                  class="font-harmattan font-normal md:text-[24px] md:leading-[31px] tracking-[0px] text-center text-[#FFF5E0]"
+                >
+                  رائدة اعمال
+                </p>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <img src="./images/navSlider.svg" alt="navSlider" />
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center md:flex-row">
+        <div class="text-start py-10">
+          <h4
+            class="font-harmattan font-normal text-[20px] md:text-[27px] md:leading-[27px] tracking-[0px] text-[#252525]"
+          >
+            أحدث المقالات
+          </h4>
+          <h2
+            class="font-harmattan font-semibold text-[28px] leading-[35px] md:[49px] md:leading-[65px] tracking-[0px] text-[#252525]"
+          >
+            اكتشــــف أحــــدث الصيحـــــــات.
+          </h2>
+        </div>
+        <div class="">
+          <div class="container mx-auto py-10">
+            <div class="relative">
+              <div
+                id="slider"
+                class="flex overflow-x-auto touch-auto md:overflow-x-hidden gap-6 scroll-smooth snap-x snap-mandatory px-4 md:px-10"
+              >
+                <div
+                  class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
+                >
+                  <img
+                    src="./images/slider1.jpg"
+                    alt="slider1"
+                    class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
+                  />
+                  <div
+                    class="text-lg text-[#b88e60] flex font-harmattan items-center gap-2 mb-2"
+                  >
+                    <span>📅</span>
+                    <span> يناير2025</span>
+                    <img src="./images/user.svg" alt="user" />
+                    <span> Admin</span>
+                  </div>
+                  <h3
+                    class="md:text-[23px] md:leading-[31px] font-medium font-harmattan text-[#252525]"
+                  >
+                    أحدث صيحات المجوهرات لعام 2025
+                  </h3>
+                  <p
+                    class="md:text-[16px] md:leading-[18px] font-normal font-harmattan text-[#252525]"
+                  >
+                    في هذا المقال، نستعرض أبرز صيحات المجوهرات التي ظهرت في عام
+                    2025، من الألوان الجريئة إلى التصاميم الفريدة التي تجعل كل
+                    قطعة فريدة من نوعها.
+                  </p>
+                  <p class="text-mainColor mt-2 underline cursor-pointer">
+                    عرض المقالة
+                  </p>
+                </div>
+
+                <div
+                  class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
+                >
+                  <img
+                    src="./images/slider2.jpg"
+                    alt="slider1"
+                    class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
+                  />
+                  <div
+                    class="text-lg text-[#b88e60] flex font-harmattan items-center gap-2 mb-2"
+                  >
+                    <span>📅</span>
+                    <span> يناير2025</span>
+                    <img src="./images/user.svg" alt="user" />
+                    <span> Admin</span>
+                  </div>
+                  <h3
+                    class="md:text-[23px] md:leading-[31px] font-medium font-harmattan text-[#252525]"
+                  >
+                    أحدث صيحات المجوهرات لعام 2025
+                  </h3>
+                  <p
+                    class="md:text-[16px] md:leading-[18px] font-normal font-harmattan text-[#252525]"
+                  >
+                    في هذا المقال، نستعرض أبرز صيحات المجوهرات التي ظهرت في عام
+                    2025، من الألوان الجريئة إلى التصاميم الفريدة التي تجعل كل
+                    قطعة فريدة من نوعها.
+                  </p>
+                  <p class="text-mainColor mt-2 underline cursor-pointer">
+                    عرض المقالة
+                  </p>
+                </div>
+                <div
+                  class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
+                >
+                  <img
+                    src="./images/slider3.jpg"
+                    alt="slider1"
+                    class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
+                  />
+                  <div
+                    class="text-lg text-[#b88e60] flex font-harmattan items-center gap-2 mb-2"
+                  >
+                    <span>📅</span>
+                    <span> يناير2025</span>
+                    <img src="./images/user.svg" alt="user" />
+                    <span> Admin</span>
+                  </div>
+                  <h3
+                    class="md:text-[23px] md:leading-[31px] font-medium font-harmattan text-[#252525]"
+                  >
+                    أحدث صيحات المجوهرات لعام 2025
+                  </h3>
+                  <p
+                    class="md:text-[16px] md:leading-[18px] font-normal font-harmattan text-[#252525]"
+                  >
+                    في هذا المقال، نستعرض أبرز صيحات المجوهرات التي ظهرت في عام
+                    2025، من الألوان الجريئة إلى التصاميم الفريدة التي تجعل كل
+                    قطعة فريدة من نوعها.
+                  </p>
+                  <p class="text-mainColor mt-2 underline cursor-pointer">
+                    عرض المقالة
+                  </p>
+                </div>
+                <div
+                  class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
+                >
+                  <img
+                    src="./images/slider4.jpg"
+                    alt="slider1"
+                    class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
+                  />
+                  <div
+                    class="text-lg text-[#b88e60] flex font-harmattan items-center gap-2 mb-2"
+                  >
+                    <span>📅</span>
+                    <span> يناير2025</span>
+                    <img src="./images/user.svg" alt="user" />
+                    <span> Admin</span>
+                  </div>
+                  <h3
+                    class="md:text-[23px] md:leading-[31px] font-medium font-harmattan text-[#252525]"
+                  >
+                    أحدث صيحات المجوهرات لعام 2025
+                  </h3>
+                  <p
+                    class="md:text-[16px] md:leading-[18px] font-normal font-harmattan text-[#252525]"
+                  >
+                    في هذا المقال، نستعرض أبرز صيحات المجوهرات التي ظهرت في عام
+                    2025، من الألوان الجريئة إلى التصاميم الفريدة التي تجعل كل
+                    قطعة فريدة من نوعها.
+                  </p>
+                  <p class="text-mainColor mt-2 underline cursor-pointer">
+                    عرض المقالة
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="bg-secondColor overflow-hidden whitespace-nowrap">
+        <div
+          class="animate-marquee inline-block py-2 text-white font-bold text-lg px-4"
+        >
+          Van Cleef & Arpels Cartier IRAM BBVLCAR Van Cleef & Arpels Cartier
+          IRAM BBVLCAR Van Cleef & Arpels Cartier IRAM BBVLCAR
+        </div>
+      </div>
+      <div
+        class="container flex items-center justify-between flex-col md:flex-row gap-16"
+      >
+        <div class="w-1/2">
+          <div class="des text-mainColor">
+            <h3
+              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+            >
+              ما هي المواد المستخدمة في صنع المجوهرات؟
+            </h3>
+            <p
+              class="font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
+            >
+              نحن نستخدم مجموعة متنوعة من المواد مثل الذهب، والفضة، والألماس،
+              واللؤلؤ، وأحجار كريمة أخرى.
+            </p>
+          </div>
+          <span
+            class="bg-mainColor w-full h-[0.5px] inline-block bg-opacity-60"
+          >
+          </span>
+          <div class="des text-mainColor">
+            <h3
+              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+            >
+              هل يمكنني تخصيص المجوهرات؟
+            </h3>
+            <p
+              class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
+            >
+              نحن نستخدم مجموعة متنوعة من المواد مثل الذهب، والفضة، والألماس،
+              واللؤلؤ، وأحجار كريمة أخرى.
+            </p>
+          </div>
+          <span
+            class="bg-mainColor w-full h-[0.5px] inline-block bg-opacity-60"
+          >
+          </span>
+
+          <div class="des text-mainColor">
+            <h3
+              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+            >
+              كيف يمكنني اختيار الحجم المناسب للخاتم؟
+            </h3>
+            <p
+              class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
+            >
+              نحن نستخدم مجموعة متنوعة من المواد مثل الذهب، والفضة، والألماس،
+              واللؤلؤ، وأحجار كريمة أخرى.
+            </p>
+          </div>
+          <span
+            class="bg-mainColor w-full h-[0.5px] inline-block bg-opacity-60"
+          >
+          </span>
+
+          <div class="des text-mainColor">
+            <h3
+              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+            >
+              ما هي سياسات الشحن والتوصيل؟
+            </h3>
+            <p
+              class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
+            >
+              نحن نستخدم مجموعة متنوعة من المواد مثل الذهب، والفضة، والألماس،
+              واللؤلؤ، وأحجار كريمة أخرى.
+            </p>
+          </div>
+          <span
+            class="bg-mainColor w-full h-[0.5px] inline-block bg-opacity-60"
+          >
+          </span>
+
+          <div class="des text-mainColor">
+            <h3
+              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+            >
+              هل يمكنني إعادة أو استبدال المجوهرات؟
+            </h3>
+            <p
+              class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
+            >
+              نحن نستخدم مجموعة متنوعة من المواد مثل الذهب، والفضة، والألماس،
+              واللؤلؤ، وأحجار كريمة أخرى.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-1/2 rounded-tl-[153.75px] rounded-tr-[153.75px] overflow-hidden"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="./images/person2.jpg"
+            alt="person2"
+          />
+        </div>
+      </div>
+      <div class="container mx-auto my-24">
+        <section
+          class="bg-[#a96e42] rounded-[40px] flex flex-col md:flex-row items-center justify-between px-6 md:px-14 py-10 relative overflow-hidden"
+        >
+          <div class="absolute inset-0 opacity-20 z-0">
+            <img
+              src="./images/woman-bg.jpg"
+              alt="Woman Background"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="w-full md:w-2/3 flex flex-wrap  gap-x-8 gap-y-6 text-white z-10"
+          >
+           
+            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+              <div
+                class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
+              >
+                <img
+                  src="./images/icon-1.svg"
+                  alt="منتجات مميزة"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="">
+                <h3 class="text-lg font-bold">منتجات مميزة</h3>
+                <p class="text-sm">مدفوعات آمنة أقساط تصل إلى 12 شهر</p>
+              </div>
+            </div>
+
+           
+            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+              <div
+                class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
+              >
+                <img
+                  src="./images/icon-2.svg"
+                  alt="مدفوعات آمنة"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="">
+                <h3 class="text-lg font-bold">مدفوعات آمنة</h3>
+                <p class="text-sm">مدفوعات آمنة أقساط تصل إلى 12 شهر</p>
+              </div>
+            </div>
+
+           
+            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+              <div
+                class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
+              >
+                <img
+                  src="./images/icon-3.svg"
+                  alt="شحن سريع"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="">
+                <h3 class="text-lg font-bold">شحن سريع</h3>
+                <p class="text-sm">مدفوعات آمنة أقساط تصل إلى 12 شهر</p>
+              </div>
+            </div>
+
+            
+            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+              <div
+                class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
+              >
+                <img
+                  src="./images/icon-4.svg"
+                  alt="خدمة 24/7"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="">
+                <h3 class="text-lg font-bold">خدمة 24/7</h3>
+                <p class="text-sm">مدفوعات آمنة أقساط تصل إلى 12 شهر</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/3 flex justify-center mb-6 md:mb-0 z-10">
+            <img
+              src="./images/necklace.png"
+              alt="Necklace"
+              class="max-w-[300px] w-full object-contain"
+            />
+          </div>
+        </section>
+      </div>
+    </section>
+    <footer class="bg-secondColor pt-[48px]">
+      <div class="container">
+        <section class="four-group flex flex-col justify-between xl:flex-row">
+          <div class="one mb-9">
+            <img class="mb-4" src="images/footer-icon.svg" alt="glimmerLogo" />
+            <p
+              class="font-harmattan font-normal text-[16px] md:text-[20px] leading-[28px] tracking-[0%] text-right md:w-[384px] md:h-[112px] text-gray-200"
+            >
+              مرحبًا بكم في جليمر ، وجهتكم المثالية لعالم المجوهرات الفاخرة! نحن
+              نقدم مجموعة متنوعة من التصاميم الفريدة، التي تجمع بين الأناقة
+              والجودة. سواء كنت تبحث عن خاتم مميز، أو قلادة رائعة، أو أساور
+              أنيقة، لدينا كل ما يلبي ذوقك الرفيع.
+            </p>
+          </div>
+
+          <div class="two mb-9">
+            <span
+              class="block mb-4 font-harmattan font-bold text-[24px] leading-[25px] tracking-[0%] text-white text-right w-[55px] h-[25px]"
+            >
+              حسابى
+            </span>
+            <div class="flex flex-col">
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[44px] h-[25px]"
+                >حسابى</span
+              >
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-[#CE9461] text-right w-[44px] h-[25px]"
+                >طلباتى</span
+              >
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
+                >سلة المشتريات</span
+              >
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[44px] h-[25px]"
+                >المفضلة</span
+              >
+            </div>
+          </div>
+
+          <div class="three mb-9">
+            <span
+              class="block mb-4 font-harmattan font-bold text-[24px] leading-[25px] tracking-[0%] text-white text-right w-[89px] h-[25px]"
+              >روابط مهمة</span
+            >
+            <div class="flex flex-col">
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[51px] h-[25px]"
+                >من نحن</span
+              >
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
+                >ساسية الخصوصية</span
+              >
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
+                >الشروط والاحكام</span
+              >
+              <span
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
+                >الدعم الفنى</span
+              >
+            </div>
+          </div>
+
+          <div class="four mb-9">
+            <span
+              class="block mb-4 font-harmattan font-bold text-[24px] leading-[25px] text-white text-right w-[175px] h-[25px]"
+            >
+              تواصل معنا
+            </span>
+            <div class="mb-2 flex flex-col">
+              <span
+                ><img
+                  src="images/footer/number.png"
+                  alt="number"
+                  class="mb-3"
+                />
+              </span>
+              <span
+                ><img
+                  src="images/footer/number.png"
+                  alt="number"
+                  class="mb-3"
+                />
+              </span>
+
+              <span
+                ><img src="images/footer/mail.png" alt="mail" class="mb-3" />
+              </span>
+
+              <div class="flex items-center xl:justify-between p-0">
+                <span class="w-8 h-8 ml-2 md:ml:0"
+                  ><img src="images/footer/facebook.svg" alt="facebook"
+                /></span>
+                <span class="w-8 h-8 ml-2 md:ml:0"
+                  ><img src="images/footer/twitter.svg" alt="twitter"
+                /></span>
+                <span class="w-8 h-8 ml-2 md:ml:0"
+                  ><img src="images/footer/instagram.svg" alt="instagram"
+                /></span>
+                <span class="w-8 h-8 ml-2 md:ml:0"
+                  ><img src="images/footer/snap.svg" alt="snap"
+                /></span>
+                <span class="w-8 h-8 ml-2 md:ml:0"
+                  ><img src="images/footer/watts.svg" alt="watts"
+                /></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="publisher">
+          <div
+            class="bg-[#F0E5D3] text-center p-4 md:py-7 md:px-10 rounded-2xl md:rounded-2xl flex flex-col items-center lg:flex-row"
+          >
+            <div class="right lg:w-[40%]">
+              <div class="flex md:block items-center">
+                <img
+                  class="md:hidden"
+                  src="images/footer/omala.png"
+                  alt="omala"
+                />
+                <div class="">
+                  <p
+                    class="font-harmattan font-bold text-[16px] md:text-[24px] leading-[30.3px] text-black md:text-right"
+                  >
+                    اشترك في النشرة البريدية ليصلك كل جديد!
+                  </p>
+                  <p
+                    class="font-harmattan font-normal text-[14px] md:text-[20px] leading-[30.3px] text-black/90 mx-auto md:mx-0 md:text-right w-[267px] h-[31px]"
+                  >
+                    اشترك في النشرة البريدية ليصلك كل جديد!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="left w-[100%] md:w-[60%] flex flex-col md:flex-row">
+              <input
+                class="border-2 border-black rounded-2xl my-3 bg-[#F0E5D3] md:ml-5 ml-0 p-2 w-full md:w-2/4 m"
+                type="text"
+                placeholder="أدخل بريدك الالكتروني"
+              />
+              <button
+                class="w-[206px] h-[48px] mx-auto md:mx-0 my-3 text-white rounded-[66px] bg-[#1E3231]"
+              >
+                اشتراك
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <hr class="border-gray-300 mt-10" />
+
+      <div class="text-white container py-8">
+        <div
+          class="flex flex-col md:flex-row justify-center md:justify-between gap-4 items-center"
+        >
+          <div class="flex items-center gap-2 text-sm md:text-base">
+            <img
+              src="images/footer/photo_2021-11-21_10-54-47 1.png"
+              alt="photo_2021"
+              class="h-6 md:h-7"
+            />
+            <span>الرقم الضريبي : 5460987552</span>
+          </div>
+
+          <p class="text-sm md:text-base text-center">
+            جميع الحقوق محفوظة لدى جلمر
+          </p>
+
+          <div class="flex items-center gap-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg"
+              alt="visa"
+              class="h-6 md:h-7"
+            />
+
+            <img src="images/footer/cola.png" alt="cola" class="h-6 md:h-7" />
+
+            <img
+              src="images/footer/paypal.png"
+              alt="paypal"
+              class="h-6 md:h-7"
+            />
+
+            <img src="images/footer/mada.png" alt="mada" class="h-6 md:h-7" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
