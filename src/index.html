@@ -2,8 +2,21 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Glimmer Jewelry</title>
+    <link rel="icon" href="./images/glimmerLogoWhite.svg" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="استمتعي بتجربة تسوق فريدة تضم تشكيلات مذهلة من المجوهرات الراقية، حيث كل قطعة مصممة لتبرز جمالكِ وتضيف لمسة من السحر إلى كل لحظة في حياتكِ"
+    />
+    <meta
+      name="keywords"
+      content="أكسسوارات شعر ,العقود ,العقودأساور إنسيال ,الخواتم ,الحلقان ,الساعات , المجوهـــــــرات "
+    />
+
+    <meta name="author" content="mostafa Mosad" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,75 +26,32 @@
     />
 
     <style>
-      @keyframes fadeSlideIn {
-        0% {
-          opacity: 0;
-          transform: translateY(50px) scale(0.95);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .animate-in {
-        animation: fadeSlideIn 0.5s ease-out forwards;
-      }
-
-      .slider-container {
-        perspective: 1000px;
-      }
-
-      .card {
-        transition: transform 0.5s ease, opacity 0.5s ease;
-        transform-origin: center;
-      }
-      .card-0 {
-        transform: rotateY(-35deg) scale(0.95) !important;
-        opacity: 0.8 !important;
-        margin-left: 15px !important;
-      }
       .card-1 {
-        transform: rotate3d(0, 1, 0, 45deg);
+        transform: perspective(1000px) rotateY(-45deg) rotateX(0deg);
+        transform-origin: left center;
       }
-
+      .card-2 {
+        transform: perspective(1000px) rotateY(-30deg) rotateX(0deg);
+        transform-origin: left center;
+      }
       .card-3 {
-        transform: rotate3d(0, 1, 0, 65deg);
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+        z-index: 10;
       }
       .card-4 {
-        transform: rotate3d(0, 1, 0, 185deg);
+        transform: perspective(1000px) rotateY(30deg) rotateX(0deg);
+        transform-origin: right center;
       }
-
-      .tilt-left {
-        transform: rotateY(-35deg) scale(0.95);
-        opacity: 0.8;
-        margin-left: 15px;
-      }
-
-      .tilt-right {
-        transform: rotateY(35deg) scale(0.95);
-        opacity: 0.8;
-        margin-right: 15px;
-      }
-
-      .active {
-        transform: rotateY(0deg) scale(1);
-        opacity: 1;
-        z-index: 10;
-        margin-top: 180px;
-      }
-
-      @media (max-width: 768px) {
-        .active {
-          margin-top: 0px;
-        }
+      .card-5 {
+        transform: perspective(1000px) rotateY(45deg) rotateX(0deg);
+        transform-origin: right center;
       }
     </style>
 
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body class="text-right overflow-x-hidden">
-    <header class="">
+    <header>
       <div class="bg-mainColor py-2 hidden md:block">
         <div
           class="container md:justify-center lg:justify-between items-center hidden md:flex-wrap md:flex"
@@ -90,7 +60,7 @@
             class="max-w-[264px] h-[24px] pt-[3px] pb-[2px] flex flex-row items-center gap-[14px]"
           >
             <div class="flex items-center gap-[6px]">
-              <img src="./images/call.svg" class="size-4" alt="callIcon" />
+              <img src="./images/icons/call.svg" class="size-4" alt="callIcon" />
               <p
                 class="font-harmattan max-w-[95px] mx-h-[17px] font-normal text-base leading-none tracking-normal"
               >
@@ -104,7 +74,7 @@
               </span>
             </span>
             <div class="flex items-center gap-[6px]">
-              <img src="./images/mail.svg" class="w-4 h-3" alt="mailIcon" />
+              <img src="./images/icons/mail.svg" class="w-4 h-3" alt="mailIcon" />
               <p
                 class="font-harmattan max-w-[96px] mx-h-[27px] font-normal text-base leading-none tracking-normal"
               >
@@ -120,7 +90,7 @@
                 <div class="size-4">
                   <img
                     class="size-full"
-                    src="./images/lang.svg"
+                    src="./images/icons/lang.svg"
                     alt="language"
                   />
                 </div>
@@ -178,16 +148,22 @@
       >
         <div class="flex items-center justify-between flex-row">
           <nav class="flex items-center flex-row">
-            <div id="btn-menu" class="size-[40px] ml-[22px] cursor-pointer">
-              <img class="w-full" src="./images//menu.svg" alt="menuIcon" />
+            <div
+              id="btn-menu"
+              class="size-[50%] md:size-[40px] ml-[22px] cursor-pointer"
+            >
+              <img class="w-full" src="./images/icons/menu.svg" alt="menuIcon" />
             </div>
             <ul class="hidden md:flex items-center flex-row gap-[20px]">
               <li>
                 <a
-                  class="font-harmattan w-[67px] h-[41px] text-secondColor font-normal text-[20px] leading-none tracking-normal"
+                  class="font-harmattan w-[67px] h-[41px] relative text-secondColor font-normal text-[20px] leading-none tracking-normal"
                   href="#"
                 >
                   الرئــيسية
+                  <p
+                    class="w-[36px] h-[2px] absolute bottom-0 right-0 bg-mainColor mx-auto mt-[px]"
+                  ></p>
                 </a>
               </li>
               <li>
@@ -209,7 +185,7 @@
             </ul>
           </nav>
         </div>
-        <div class="w-[199px] h-[53px]">
+        <div class="size-[40%] flex items-center md:w-[199px] md:h-[53px]">
           <img
             src="./images/glimmerLogo.svg"
             class="w-full"
@@ -218,14 +194,14 @@
         </div>
         <div class="flex items-center flex-row gap-[16px]">
           <div
-            class="bg-[#CE94611F] hover:bg-mainColor flex justify-center items-center overflow-hidden size-[40px] rounded-full"
+            class="bg-[#CE94611F] hover:bg-mainColor flex justify-center items-center overflow-hidden size-[40%] p-2 md:p-0 md:size-[40px] rounded-full"
           >
-            <img src="./images/search-normal.svg" alt="searchIcon" />
+            <img src="./images/icons/search-normal.svg" alt="searchIcon" />
           </div>
           <div
             class="bg-[#CE94611F] hover:bg-mainColor hidden lg:flex justify-center items-center overflow-hidden size-[40px] rounded-full"
           >
-            <img src="./images/user.svg" alt="userIcon" />
+            <img src="./images/icons/user.svg" alt="userIcon" />
           </div>
           <div
             class="bg-[#CE94611F] hover:bg-mainColor hidden lg:flex justify-center items-center overflow-hidden size-[40px] rounded-full"
@@ -233,9 +209,9 @@
             <img src="./images/heart.svg" alt="heartIcon" />
           </div>
           <div
-            class="bg-mainColor relative flex justify-center items-center size-[40px] rounded-full"
+            class="bg-mainColor relative flex justify-center items-center size-[30%] p-1 md:size-[40px] rounded-full"
           >
-            <img src="./images/shopping-cart.svg" alt="shopping-cartIcon" />
+            <img src="./images/icons/shopping-cart.svg" alt="shopping-cartIcon" />
             <span
               class="absolute size-[20px] rounded-full flex justify-center items-center bg-secondColor top-[-8px] text-white right-[-8px]"
               >1</span
@@ -261,160 +237,7 @@
         >
           x
         </div>
-        <ul class="flex flex-col px-3 text-white">
-          <li>
-            <div class="flex justify-between px-6 py-3 items-baseline">
-              <a
-                class="w-[46px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-                href="#"
-              >
-                الرئــيسية
-              </a>
-            </div>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <div class="flex justify-between px-6 py-3 items-baseline">
-              <a
-                class="w-[43px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-                href="#"
-              >
-                المدونة
-              </a>
-            </div>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[58px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                تخفيضات
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[37px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                العقود
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[40px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                الخواتم
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[39px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                الأساور
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[48px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                السلاسل
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[43px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                الحلقان
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[82px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                خواتم الخطوبة
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[112px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                اكسسوارات الشعر
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <a
-              class="w-[53px] h-[22px] font-harmattan font-semibold text-[18px] leading-[22px] tracking-normal text-right"
-              href="#"
-            >
-              <div class="flex justify-between px-6 py-3 items-baseline">
-                الساعات
-                <img src="./images/down-arrow 1.svg" class="size-4" alt="" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr />
-          </li>
-        </ul>
+        <ul class="flex flex-col all-section-title mx-8 text-white"></ul>
       </div>
     </header>
 
@@ -422,6 +245,13 @@
       <div
         class="bg-secondColor mx-auto h-full xl:h-lvh py-[70px] overflow-hidden relative"
       >
+        <div class="absolute z-[1000] top-[10%] left-[40%] hidden md:block">
+          <img
+            class="bg-no-repeat size-10"
+            src="./images/icons/star.svg"
+            alt="floor"
+          />
+        </div>
         <div
           class="absolute top-[20px] right-[-20px] md:right-[120px] opacity-10 rotate-[30deg]"
         >
@@ -443,7 +273,7 @@
 
         <div class="container">
           <div
-            class="absolute w-[55px] h-[49px] md:w-[128px] md:h-[130px] lg:left-[6.67%] lg:right-[82.67%] lg:top-[8%] lg:bottom-[80.04%] left-[30%] right-[50%] top-[75%] bottom-[13%]"
+            class="absolute w-[55px] h-[49px] md:w-[128px] md:h-[130px] lg:left-[10%] lg:right-[75%] lg:top-[4%] lg:bottom-[85%] left-[30%] right-[50%] top-[75%] bottom-[13%]"
           >
             <div
               class="relative w-[55px] h-[49px] md:w-[128px] md:h-[130px] z-10 rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px]"
@@ -468,7 +298,7 @@
               class="relative pt-5 ms-10 md:ms-0 w-[299px] h-[327.51px] md:w-[397px] md:h-[503px] z-10 rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px]"
             >
               <div
-                class="w-[299px] card-0 h-[327.51px] md:w-[397px] md:h-[503px] overflow-hidden"
+                class="w-[299px] h-[327.51px] md:w-[397px] md:h-[503px] overflow-hidden"
               >
                 <img
                   class="w-full h-full object-cover rounded-tl-[153.75px] rounded-tr-[153.75px] md:rounded-tl-[250px] md:rounded-tr-[250px]"
@@ -517,7 +347,7 @@
                       class="inline-flex items-center bg-white p-1 md:p-2 rounded-full md:mr-3 mr-1"
                     >
                       <img
-                        src="./images/arrowDown.svg"
+                        src="./images/icons/arrowDown.svg"
                         alt="arrowDown"
                         class="inline-block w-4 md:w-6"
                       />
@@ -539,7 +369,7 @@
                 <a class="opacity-20" href="#">
                   <img
                     class="w-[38px] h-[8px]md:w-[92px] md:h-[10px]"
-                    src="./images/arrrow-left.svg"
+                    src="./images/icons/arrrow-left.svg"
                     alt="arrrow-left"
                   />
                 </a>
@@ -551,7 +381,7 @@
                 <a href="#">
                   <img
                     class="w-[38px] h-[8px]md:w-[92px] md:h-[10px]"
-                    src="./images/arrrow-right.svg"
+                    src="./images/icons/arrrow-right.svg"
                     alt="arrrow-right"
                 /></a>
               </div>
@@ -562,34 +392,34 @@
     </section>
     <section class="sec-2 relative bg-[#F0E5D3]">
       <img
-        src="images/1.svg"
+        src="images/sec-2-bg/1.svg"
         alt="backGround"
-        class="absolute right-0 top-0 opacity-50 w-[300px] -z-10 md:w-auto"
+        class="absolute right-0 top-0 opacity-100 w-[300px] z-10 md:w-auto"
       />
       <img
-        src="images/2.svg"
+        src="images/sec-2-bg/2.svg"
         alt="backGround"
-        class="absolute right-0 bottom-0 opacity-50 w-[300px] -z-10 md:w-auto"
+        class="absolute right-0 bottom-0 opacity-100 w-[300px] z-10 md:w-auto"
       />
       <img
-        src="images/3.svg"
+        src="images/sec-2-bg/3.svg"
         alt="backGround"
-        class="absolute left-0 top-0 opacity-50 w-[300px] -z-10 md:w-auto"
+        class="absolute left-0 top-0 opacity-100 w-[300px] z-10 md:w-auto"
       />
       <img
-        src="images/4.svg"
+        src="images/sec-2-bg/4.svg"
         alt="backGround"
-        class="absolute left-0 bottom-0 opacity-50 w-[300px] -z-10 md:w-auto"
+        class="absolute left-0 bottom-0 opacity-100 w-[300px] z-10 md:w-auto"
       />
       <img
-        src="images/5.svg"
+        src="images/sec-2-bg/5.svg"
         alt="backGround"
-        class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-2/2 opacity-50 w-[300px] md:w-auto"
+        class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-2/2 opacity-100 w-[300px] md:w-auto"
       />
 
       <div class="container main-sub-slider"></div>
     </section>
-    <section class="py-10 container">
+    <section class="sec-3 py-10 container">
       <div class="flex items-center justify-center gap-4">
         <div class="flex-1 h-px bg-[#3E1F043D]"></div>
         <h2
@@ -601,165 +431,8 @@
       </div>
 
       <div
-        class="flex flex-row flex-wrap mt-8 md:flex-nowrap gap-[20px] items-center justify-center"
-      >
-        <div
-          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
-        >
-          <img
-            src="./images/new-product1.jpg"
-            alt="الخواتم  "
-            class="rounded-[12px] sub-slider"
-          />
-
-          <div class="flex justify-between items-center">
-            <p
-              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
-            >
-              الخواتم
-            </p>
-
-            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
-            </div>
-          </div>
-
-          <p
-            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
-          >
-            خاتم ذهبي مع فص ألماس
-          </p>
-
-          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
-            <span
-              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
-              >500 ر.س</span
-            >
-            <span
-              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
-              >650 ر.س</span
-            >
-          </div>
-        </div>
-        <div
-          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
-        >
-          <img
-            src="./images/new-product2.jpg"
-            alt="الخواتم  "
-            class="rounded-[12px] sub-slider"
-          />
-
-          <div class="flex justify-between items-center">
-            <p
-              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
-            >
-              الخواتم
-            </p>
-
-            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
-            </div>
-          </div>
-
-          <p
-            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
-          >
-            خاتم ذهبي مع فص ألماس
-          </p>
-
-          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
-            <span
-              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
-              >500 ر.س</span
-            >
-            <span
-              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
-              >650 ر.س</span
-            >
-          </div>
-        </div>
-        <div
-          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
-        >
-          <img
-            src="./images/new-product3.jpg"
-            alt="الخواتم  "
-            class="rounded-[12px] sub-slider"
-          />
-
-          <div class="flex justify-between items-center">
-            <p
-              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
-            >
-              الخواتم
-            </p>
-
-            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
-            </div>
-          </div>
-
-          <p
-            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
-          >
-            خاتم ذهبي مع فص ألماس
-          </p>
-
-          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
-            <span
-              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
-              >500 ر.س</span
-            >
-            <span
-              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
-              >650 ر.س</span
-            >
-          </div>
-        </div>
-        <div
-          class="w-[196px] md:w-[302px] bg-mainColor bg-opacity-10 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
-        >
-          <img
-            src="./images/new-product4.jpg"
-            alt="الخواتم  "
-            class="rounded-[12px] sub-slider"
-          />
-
-          <div class="flex justify-between items-center">
-            <p
-              class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-harmattan text-[12px] md:text-[20px] font-normal leading-[19px] md:leading-[25px] opacity-85"
-            >
-              الخواتم
-            </p>
-
-            <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
-            </div>
-          </div>
-
-          <p
-            class="text-[#252525] text-[16px] md:text-[22px] leading-[18px] md:leading-[25px] font-medium font-harmattan"
-          >
-            خاتم ذهبي مع فص ألماس
-          </p>
-
-          <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
-            <span
-              class="text-[#B70404] w-[58px] font-harmattan text-[16px] md:text-[18px]"
-              >500 ر.س</span
-            >
-            <span
-              class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]"
-              >650 ر.س</span
-            >
-          </div>
-        </div>
-      </div>
+        class="flex products-card flex-row flex-wrap mt-8 md:flex-nowrap gap-[20px] items-center justify-center"
+      ></div>
 
       <h4
         class="text-[#252525] font-harmattan py-10 font-normal text-[20px] leading-[32px] md:text-[48px] md:leading-[78px] tracking-[0px]"
@@ -796,14 +469,14 @@
       </h4>
     </section>
 
-    <section class="sec-3 bg-secondColor relative pb-10">
+    <section class="sec-4 bg-secondColor relative pb-10">
       <img
-        src="images/eventTree2.png"
+        src="images/necklace-slider/eventTree2.png"
         alt="backGround"
         class="absolute right-0 top-0 opacity-50 w-[300px] z-10 md:w-auto"
       />
       <img
-        src="images/eventTree1.png"
+        src="images/necklace-slider/eventTree1.png"
         alt="backGround"
         class="absolute left-20 bottom-0 opacity-50 w-[300px] z-10 md:w-auto"
       />
@@ -815,142 +488,129 @@
             لكل مناسبة، لدينا المجوهرات التي تجعلها لا تُنسى
           </h4>
           <h2
-            class="font-harmattan font-bold text-[28px] pb-10 md:text-[48px] leading-[72px] tracking-[0px]"
+            class="font-harmattan font-bold text-[28px] md:text-[48px] leading-[72px] tracking-[0px]"
           >
             تســــــــــــوقي أحدث الأقســـام
           </h2>
-          <!-- 
-          <div class="flex flex-row items-center gap-4 pt-12">
-            <div
-              style="transform: rotate3d(1, 1, 0, 45deg)"
-              class="w-[252px] h-[320px] mb-28 rounded-[16px] overflow-hidden relative bg-black"
-            >
-              <img
-                src="./images/glimmer2.jpg"
-                alt="الأطقم"
-                class="w-full h-full object-cover"
-              />
 
-              <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
-              >
-                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
-                  الأطقم
-                  <span class="text-sm font-normal">(33 قطعة)</span>
-                </h3>
-                <a href="#" class="text-sm font-harmattan mt-1 underline"
-                  >تسوق الآن</a
+          <div class="flex items-center justify-evenly w-full">
+            <div
+              class="card card-1 w-[260px] h-[450px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+            >
+              <div class="relative h-full">
+                <img
+                  src="./images/necklace-slider/Chain necklace-3.jpg"
+                  alt="الأساور ذهبية"
+                  class="w-full h-full object-cover"
+                  style="object-position: 8% center"
+                />
+                <div
+                  class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-20"
                 >
+                  <h3 class="text-[24px] font-harmattan font-medium">
+                    الأساور <span class="text-xs font-normal">(33 قطعة)</span>
+                  </h3>
+                  <p class="text-[16px] leading-[42px] opacity-90">تسوق الآن</p>
+                </div>
               </div>
             </div>
-            <div
-              class="w-[252px] h-[396px] mb-16 rounded-[16px] overflow-hidden relative bg-black"
-            >
-              <img
-                src="./images/glimmer2.jpg"
-                alt="الأطقم"
-                class="w-full h-full object-cover"
-              />
 
-              <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
-              >
-                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
-                  الأطقم
-                  <span class="text-sm font-normal">(33 قطعة)</span>
-                </h3>
-                <a href="#" class="text-sm font-harmattan mt-1 underline"
-                  >تسوق الآن</a
+            <div
+              class="card card-2 w-[260px] h-[500px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+            >
+              <div class="relative h-full">
+                <img
+                  src="./images/necklace-slider/Chain necklace-2.jpg"
+                  alt="الحلقان ذهبية"
+                  class="w-full h-full object-cover"
+                  style="object-position: 28% center"
+                />
+                <div
+                  class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-20"
                 >
+                  <h3 class="text-[24px] font-harmattan font-medium">
+                    الحلقان <span class="text-xs font-normal">(33 قطعة)</span>
+                  </h3>
+                  <p class="text-[16px] leading-[42px] opacity-90">تسوق الآن</p>
+                </div>
               </div>
             </div>
-            <div
-              class="w-[252px] h-[396px] rounded-[16px] overflow-hidden relative bg-black"
-            >
-              <img
-                src="./images/glimmer2.jpg"
-                alt="الأطقم"
-                class="w-full h-full object-cover"
-              />
 
-              <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
-              >
-                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
-                  الأطقم
-                  <span class="text-sm font-normal">(33 قطعة)</span>
-                </h3>
-                <a href="#" class="text-sm font-harmattan mt-1 underline"
-                  >تسوق الآن</a
+            <div
+              class="card card-3 w-[2000px] md:w-[400px] h-[600px] mt-52 rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+            >
+              <div class="relative h-full">
+                <img
+                  src="./images/necklace-slider/Chain necklace-1.jpg"
+                  alt="الأطقم متنوعة"
+                  class="w-full h-full object-cover"
+                  style="object-position: 50% center"
+                />
+
+                <div
+                  class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-20"
                 >
+                  <h3 class="text-[24px] font-harmattan font-medium">
+                    الأطقم <span class="text-xs font-normal">(33 قطعة)</span>
+                  </h3>
+                  <p class="text-[16px] leading-[42px] opacity-90">تسوق الآن</p>
+                </div>
               </div>
             </div>
-            <div
-              class="w-[252px] h-[396px] mb-16 rounded-[16px] overflow-hidden relative bg-black"
-            >
-              <img
-                src="./images/glimmer2.jpg"
-                alt="الأطقم"
-                class="w-full h-full object-cover"
-              />
 
-              <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
-              >
-                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
-                  الأطقم
-                  <span class="text-sm font-normal">(33 قطعة)</span>
-                </h3>
-                <a href="#" class="text-sm font-harmattan mt-1 underline"
-                  >تسوق الآن</a
+            <div
+              class="card card-4 w-[260px] h-[500px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+            >
+              <div class="relative h-full">
+                <img
+                  src="./images/necklace-slider/Chain necklace-4.jpg"
+                  alt="العقود ذهبية"
+                  class="w-full h-full object-cover"
+                  style="object-position: 72% center"
+                />
+                <div
+                  class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-20"
                 >
+                  <h3 class="text-[24px] font-harmattan font-medium">
+                    العقود <span class="text-xs font-normal">(33 قطعة)</span>
+                  </h3>
+                  <p class="text-[16px] leading-[42px] opacity-90">تسوق الآن</p>
+                </div>
               </div>
             </div>
-            <div
-              class="w-[252px] h-[320px] mb-28 rounded-[16px] overflow-hidden relative bg-black"
-            >
-              <img
-                src="./images/glimmer2.jpg"
-                alt="الأطقم"
-                class="w-full h-full object-cover"
-              />
 
-              <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white text-center"
-              >
-                <h3 class="text-[20px] font-harmattan font-bold leading-[30px]">
-                  الأطقم
-                  <span class="text-sm font-normal">(33 قطعة)</span>
-                </h3>
-                <a href="#" class="text-sm font-harmattan mt-1 underline"
-                  >تسوق الآن</a
+            <div
+              class="card card-5 w-[260px] h-[450px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+            >
+              <div class="relative h-full">
+                <img
+                  src="./images/necklace-slider/Chain necklace-5.jpg"
+                  alt="الساعات ذهبية"
+                  class="w-full h-full object-cover"
+                  style="object-position: 92% center"
+                />
+                <div
+                  class="absolute bottom-0 left-0 right-0 text-white text-center bg-black bg-opacity-20"
                 >
+                  <h3 class="text-[24px] font-harmattan font-medium">
+                    الساعات <span class="text-xs font-normal">(33 قطعة)</span>
+                  </h3>
+                  <p class="text-[16px] leading-[42px] opacity-90">تسوق الآن</p>
+                </div>
               </div>
             </div>
-          </div> -->
-
-          <div
-            class="slider-container flex justify-center items-center overflow-hidden px-4 sm:px-8"
-          >
-            <div
-              id="slider"
-              class="flex gap-4 sm:gap-6 md:gap-8 transition-all duration-500"
-            ></div>
           </div>
-
           <div class="flex justify-center gap-4 mt-4">
             <button
-              onclick="prev()"
               class="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center transition"
             >
-              <img src="./images/right.svg" alt="السابق" class="w-4 sm:w-6" />
+              <img src="./images/icons/right.svg" alt="السابق" class="w-4 sm:w-6" />
             </button>
             <button
-              onclick="next()"
               class="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex justify-center items-center transition"
             >
               <img
-                src="./images/right.svg"
+                src="./images/icons/right.svg"
                 alt="التالي"
                 class="rotate-180 w-4 sm:w-6"
               />
@@ -1000,7 +660,7 @@
             <h2
               class="font-harmattan font-normal md:text-[24px] md:leading-[35px] tracking-[0px]"
             >
-              <img class="ps-10" src="./images/quote.png" alt="quote" />
+              <img class="ps-10" src="./images/icons/quote.png" alt="quote" />
               لقد كانت تجربتي في هذا المتجر رائعة! التصاميم مذهلة والجودة لا
               تضاهى. كنت أبحث عن هدية مميزة ، وساعدني فريق العمل بشكل رائع في
               اختيار القطعة المثالية. كل قطعة مجوهرات كانت مليئة بالأناقة
@@ -1008,7 +668,7 @@
               وكأنني في منزلهم. بالتأكيد سأعود للشراء من هنا مرة أخرى.
               <img
                 class="rotate-180 ms-auto ps-10"
-                src="./images/quote.png"
+                src="./images/icons/quote.png"
                 alt="quote"
               />
             </h2>
@@ -1063,7 +723,7 @@
                   class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
                 >
                   <img
-                    src="./images/slider1.jpg"
+                    src="./images/sec4-slider/slider1.jpg"
                     alt="slider1"
                     class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
                   />
@@ -1072,7 +732,7 @@
                   >
                     <span>📅</span>
                     <span> يناير2025</span>
-                    <img src="./images/user.svg" alt="user" />
+                    <img src="./images/icons/user.svg" alt="user" />
                     <span> Admin</span>
                   </div>
                   <h3
@@ -1096,7 +756,7 @@
                   class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
                 >
                   <img
-                    src="./images/slider2.jpg"
+                    src="./images/sec4-slider/slider2.jpg"
                     alt="slider1"
                     class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
                   />
@@ -1105,7 +765,7 @@
                   >
                     <span>📅</span>
                     <span> يناير2025</span>
-                    <img src="./images/user.svg" alt="user" />
+                    <img src="./images/icons/user.svg" alt="user" />
                     <span> Admin</span>
                   </div>
                   <h3
@@ -1128,7 +788,7 @@
                   class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
                 >
                   <img
-                    src="./images/slider3.jpg"
+                    src="./images/sec4-slider/slider3.jpg"
                     alt="slider1"
                     class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
                   />
@@ -1137,7 +797,7 @@
                   >
                     <span>📅</span>
                     <span> يناير2025</span>
-                    <img src="./images/user.svg" alt="user" />
+                    <img src="./images/icons/user.svg" alt="user" />
                     <span> Admin</span>
                   </div>
                   <h3
@@ -1160,7 +820,7 @@
                   class="min-w-[300px] max-w-[300px] shrink-0 snap-start bg-white rounded-[16px] shadow group"
                 >
                   <img
-                    src="./images/slider4.jpg"
+                    src="./images/sec4-slider/slider4.jpg"
                     alt="slider1"
                     class="rounded-[16px] w-full h-[200px] object-cover mb-4 transition-all duration-700 group-hover:rounded-tl-[210px] group-hover:rounded-tr-[210px]"
                   />
@@ -1169,7 +829,7 @@
                   >
                     <span>📅</span>
                     <span> يناير2025</span>
-                    <img src="./images/user.svg" alt="user" />
+                    <img src="./images/icons/user.svg" alt="user" />
                     <span> Admin</span>
                   </div>
                   <h3
@@ -1205,14 +865,22 @@
         </div>
       </div>
       <div
-        class="container flex items-center justify-between flex-col md:flex-row gap-16"
+        class="container pt-10 flex items-center justify-between flex-col md:flex-row gap-y-5 md:gap-16"
       >
         <div class="w-1/2">
           <div class="des text-mainColor">
             <h3
-              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+              class="font-harmattan flex items-center justify-between font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
             >
-              ما هي المواد المستخدمة في صنع المجوهرات؟
+              <span>ما هي المواد المستخدمة في صنع المجوهرات؟ </span>
+              <div class="">
+                <span
+                  ><img
+                    class="ms-auto inline-block"
+                    src="./images/icons/subtraction.svg"
+                    alt="subtraction"
+                /></span>
+              </div>
             </h3>
             <p
               class="font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
@@ -1227,9 +895,17 @@
           </span>
           <div class="des text-mainColor">
             <h3
-              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+              class="font-harmattan flex items-center justify-between font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
             >
-              هل يمكنني تخصيص المجوهرات؟
+              <span>هل يمكنني تخصيص المجوهرات؟ </span>
+              <div class="">
+                <span
+                  ><img
+                    class="ms-auto inline-block"
+                    src="./images/icons/subtraction.svg"
+                    alt="subtraction"
+                /></span>
+              </div>
             </h3>
             <p
               class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
@@ -1245,9 +921,17 @@
 
           <div class="des text-mainColor">
             <h3
-              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+              class="font-harmattan flex items-center justify-between font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
             >
-              كيف يمكنني اختيار الحجم المناسب للخاتم؟
+              <span> كيف يمكنني اختيار الحجم المناسب للخاتم؟ </span>
+              <div class="">
+                <span
+                  ><img
+                    class="ms-auto inline-block"
+                    src="./images/icons/subtraction.svg"
+                    alt="subtraction"
+                /></span>
+              </div>
             </h3>
             <p
               class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
@@ -1263,9 +947,17 @@
 
           <div class="des text-mainColor">
             <h3
-              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+              class="font-harmattan flex items-center justify-between font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
             >
-              ما هي سياسات الشحن والتوصيل؟
+              <span>ما هي سياسات الشحن والتوصيل؟ </span>
+              <div class="">
+                <span
+                  ><img
+                    class="ms-auto inline-block"
+                    src="./images/icons/subtraction.svg"
+                    alt="subtraction"
+                /></span>
+              </div>
             </h3>
             <p
               class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
@@ -1281,9 +973,17 @@
 
           <div class="des text-mainColor">
             <h3
-              class="font-harmattan font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
+              class="font-harmattan flex items-center justify-between font-normal text-[20px] leading-[39.8px] cursor-pointer md:text-[32px] md:leading-[99px] tracking-[0px] text-right"
             >
-              هل يمكنني إعادة أو استبدال المجوهرات؟
+              <span>هل يمكنني إعادة أو استبدال المجوهرات؟ </span>
+              <div class="">
+                <span
+                  ><img
+                    class="ms-auto inline-block"
+                    src="./images/icons/subtraction.svg"
+                    alt="subtraction"
+                /></span>
+              </div>
             </h3>
             <p
               class="hidden font-harmattan text-black font-normal text-[18px] leading-[30.8px] md:text-[25px] md:leading-[37px] tracking-[0px] text-right"
@@ -1303,28 +1003,28 @@
           />
         </div>
       </div>
-      <div class="container mx-auto my-24">
+
+      <div class="container my-24">
         <section
-          class="bg-[#a96e42] rounded-[40px] flex flex-col md:flex-row items-center justify-between px-6 md:px-14 py-10 relative overflow-hidden"
+          class="bg-[#a96e42] pb-6 lg:pb-0 rounded-[40px] flex flex-col md:flex-row items-center gap-2 lg:h-[230px] justify-around px-6 relative"
         >
           <div class="absolute inset-0 opacity-20 z-0">
             <img
               src="./images/woman-bg.jpg"
               alt="Woman Background"
-              class="w-full h-full object-cover"
+              class="w-full rounded-[40px] h-full lg:h-[230px] object-cover"
             />
           </div>
 
           <div
-            class="w-full md:w-2/3 flex flex-wrap  gap-x-8 gap-y-6 text-white z-10"
+            class="w-full flex flex-wrap order-2 lg:order-1 gap-x-8 gap-y-6 text-white z-10"
           >
-           
-            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+            <div class="flex flex-row items-center gap-4 text-start">
               <div
                 class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
               >
                 <img
-                  src="./images/icon-1.svg"
+                  src="./images/icons/icon-1.svg"
                   alt="منتجات مميزة"
                   class="w-full h-full"
                 />
@@ -1335,13 +1035,12 @@
               </div>
             </div>
 
-           
-            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+            <div class="flex flex-row items-center gap-4 text-start">
               <div
                 class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
               >
                 <img
-                  src="./images/icon-2.svg"
+                  src="./images/icons/icon-2.svg"
                   alt="مدفوعات آمنة"
                   class="w-full h-full"
                 />
@@ -1351,14 +1050,17 @@
                 <p class="text-sm">مدفوعات آمنة أقساط تصل إلى 12 شهر</p>
               </div>
             </div>
+          </div>
 
-           
-            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+          <div
+            class="w-full flex flex-wrap order-3 lg:order-2 gap-x-8 gap-y-6 text-white z-10"
+          >
+            <div class="flex flex-row items-center gap-4 text-start">
               <div
                 class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
               >
                 <img
-                  src="./images/icon-3.svg"
+                  src="./images/icons/icon-3.svg"
                   alt="شحن سريع"
                   class="w-full h-full"
                 />
@@ -1369,13 +1071,12 @@
               </div>
             </div>
 
-            
-            <div class="flex flex-row items-center gap-4 text-start w-full sm:w-[45%]">
+            <div class="flex flex-row items-center gap-4 text-start">
               <div
                 class="rounded-full size-[55px] md:size-[65px] flex items-center justify-center mb-2"
               >
                 <img
-                  src="./images/icon-4.svg"
+                  src="./images/icons/icon-4.svg"
                   alt="خدمة 24/7"
                   class="w-full h-full"
                 />
@@ -1387,11 +1088,11 @@
             </div>
           </div>
 
-          <div class="w-full md:w-1/3 flex justify-center mb-6 md:mb-0 z-10">
+          <div class="w-3/3 md:w-full order-1 lg:order-3">
             <img
               src="./images/necklace.png"
               alt="Necklace"
-              class="max-w-[300px] w-full object-contain"
+              class="w-[297px] h-[297px] md:w-[370px] md:h-[301px] relative bottom-16 md:bottom-10 object-cover"
             />
           </div>
         </section>
@@ -1419,21 +1120,25 @@
               حسابى
             </span>
             <div class="flex flex-col">
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[44px] h-[25px]"
-                >حسابى</span
+                >حسابى</a
               >
-              <span
-                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-[#CE9461] text-right w-[44px] h-[25px]"
-                >طلباتى</span
+              <a
+                href="#"
+                class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-mainColor text-right w-[44px] h-[25px]"
+                >طلباتى</a
               >
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
-                >سلة المشتريات</span
+                >سلة المشتريات</a
               >
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[44px] h-[25px]"
-                >المفضلة</span
+                >المفضلة</a
               >
             </div>
           </div>
@@ -1444,21 +1149,25 @@
               >روابط مهمة</span
             >
             <div class="flex flex-col">
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[51px] h-[25px]"
-                >من نحن</span
+                >من نحن</a
               >
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
-                >ساسية الخصوصية</span
+                >ساسية الخصوصية</a
               >
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
-                >الشروط والاحكام</span
+                >الشروط والاحكام</a
               >
-              <span
+              <a
+                href="#"
                 class="block mb-3 font-harmattan font-normal text-[20px] leading-[25px] text-gray-200 text-right w-[106px] h-[25px]"
-                >الدعم الفنى</span
+                >الدعم الفنى</a
               >
             </div>
           </div>
@@ -1470,26 +1179,28 @@
               تواصل معنا
             </span>
             <div class="mb-2 flex flex-col">
-              <span
+              <a href="#"
                 ><img
                   src="images/footer/number.png"
                   alt="number"
                   class="mb-3"
                 />
-              </span>
-              <span
+              </a>
+              <a href="#"
                 ><img
                   src="images/footer/number.png"
                   alt="number"
                   class="mb-3"
                 />
-              </span>
+              </a>
 
-              <span
+              <a href="#"
                 ><img src="images/footer/mail.png" alt="mail" class="mb-3" />
-              </span>
+              </a>
 
-              <div class="flex items-center xl:justify-between p-0">
+              <div
+                class="flex cursor-pointer items-center xl:justify-between p-0"
+              >
                 <span class="w-8 h-8 ml-2 md:ml:0"
                   ><img src="images/footer/facebook.svg" alt="facebook"
                 /></span>
