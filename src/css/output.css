@@ -741,6 +741,14 @@ video {
   top: 75%;
 }
 
+.left-\[20\%\] {
+  left: 20%;
+}
+
+.left-\[15\%\] {
+  left: 15%;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -753,8 +761,8 @@ video {
   z-index: 10;
 }
 
-.z-\[1000\] {
-  z-index: 1000;
+.z-\[20\] {
+  z-index: 20;
 }
 
 .z-\[999\] {
@@ -1133,8 +1141,16 @@ video {
   width: 50%;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
 .w-10 {
   width: 2.5rem;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-4 {
@@ -1330,14 +1346,6 @@ video {
   width: 100vw;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
 .min-w-\[300px\] {
   min-width: 300px;
 }
@@ -1380,10 +1388,6 @@ video {
 
 .flex-1 {
   flex: 1 1 0%;
-}
-
-.shrink-0 {
-  flex-shrink: 0;
 }
 
 .-translate-x-1\/2 {
@@ -1436,22 +1440,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.touch-auto {
-  touch-action: auto;
-}
-
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-mandatory {
-  --tw-scroll-snap-strictness: mandatory;
-}
-
-.snap-start {
-  scroll-snap-align: start;
 }
 
 .flex-row {
@@ -1563,16 +1551,8 @@ video {
   overflow: hidden;
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
-}
-
 .overflow-x-hidden {
   overflow-x: hidden;
-}
-
-.scroll-smooth {
-  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap {
@@ -1855,6 +1835,10 @@ video {
   padding-top: 2.5rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -1873,10 +1857,6 @@ video {
 
 .pt-\[48px\] {
   padding-top: 48px;
-}
-
-.pt-4 {
-  padding-top: 1rem;
 }
 
 .text-center {
@@ -2302,6 +2282,10 @@ html {
     right: 120px;
   }
 
+  .md\:left-\[40\%\] {
+    left: 40%;
+  }
+
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
@@ -2560,10 +2544,6 @@ html {
 
   .md\:gap-8 {
     gap: 2rem;
-  }
-
-  .md\:overflow-x-hidden {
-    overflow-x: hidden;
   }
 
   .md\:rounded-2xl {
