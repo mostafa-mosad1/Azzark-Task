@@ -2621,6 +2621,10 @@ html {
     gap: 2rem;
   }
 
+  .md\:overflow-hidden {
+    overflow: hidden;
+  }
+
   .md\:rounded-2xl {
     border-radius: 1rem;
   }
