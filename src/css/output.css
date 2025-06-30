@@ -2625,6 +2625,10 @@ html {
     overflow: hidden;
   }
 
+  .md\:overscroll-none {
+    overscroll-behavior: none;
+  }
+
   .md\:rounded-2xl {
     border-radius: 1rem;
   }
