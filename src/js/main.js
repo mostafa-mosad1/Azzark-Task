@@ -91,11 +91,13 @@ navLinks.innerHTML = containerAllSection;
 
 btnMenu.addEventListener(`click`, function (e) {
   e.preventDefault();
-  showMenu.classList.remove("translate-x-full");
+  showMenu.classList.remove("left-[100%]");
+  document.body.style.overflow = "hidden";
 });
 closeMenu.addEventListener(`click`, function (e) {
   e.preventDefault();
-  showMenu.classList.add("translate-x-full");
+  showMenu.classList.add("left-[100%]");
+  document.body.style.overflow = "";
 });
 
 // sec-3
@@ -245,167 +247,163 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let SliderIndexData = 0;
 
+  mainSubSlider.style.transition = "opacity 0.4s ease";
+
   function changeSliderData(index) {
-    mainSubSlider.innerHTML = `<div class="flex relative z-[999] py-[50px] flex-col items-center md:flex-row gap-6">
+    mainSubSlider.style.opacity = 0;
+
+    setTimeout(() => {
+      mainSubSlider.innerHTML = `
+        <div class="flex relative z-[999] py-[50px] flex-col items-center md:flex-row gap-6">
           <div class="flex flex-col items-center">
-            <h2
-              class="pt-[32px] w-[157px] h-[48px] md:w-[235px] md:h-[48px] font-harmattan font-normal text-[32px] md:text-[48px] leading-[48px] tracking-normal"
-            >
+            <h2 class="pt-[32px] w-[157px] h-[48px] md:w-[235px] md:h-[48px] font-harmattan font-normal text-[32px] md:text-[48px] leading-[48px] tracking-normal">
               عروض لا تفوتك!
             </h2>
-            <p
-              class="py-[41px] w-[311px] h-[48px] md:w-[273px] md:h-[48px] font-harmattan font-normal text-[20px] md:text-[24px] leading-[48px] text-[#252525BF]"
-            >
+            <p class="py-[41px] w-[311px] h-[48px] md:w-[273px] md:h-[48px] font-harmattan font-normal text-[20px] md:text-[24px] leading-[48px] text-[#252525BF]">
               لكل مناسبة، لدينا المجوهرات التي تجعلها لا تُنسى
             </p>
 
             <div class="flex justify-center md:w-[475px] md:h-[520px] items-center gap-3 md:gap-10">
-              <div id="arrow-right" class="size-6  md:size-10 cursor-pointer">
-                <img
-                  class="w-full  "
-                  src="./images/next-slider.svg"
-                  alt="next-slider"
-                />
+              <div id="arrow-right" class="size-6 md:size-10 cursor-pointer">
+                <img class="w-full" src="./images/next-slider.svg" alt="next-slider" />
               </div>
-              <div
-                class="w-[254px] h-[420px] md:w-[302px] md:h-[520px] bg-white mt-7 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan"
-              >
-                <img
-                  src='   ${SliderData[index].sub}  '
-                  alt="حلق  "
-                  class="w-full rounded-[12px] sub-slider"
-                />
-
+              <div class="w-[254px] h-[420px] md:w-[302px] md:h-[520px] bg-white mt-7 rounded-[16px] shadow-md p-2 flex flex-col space-y-2 text-right font-harmattan">
+                <img src="${SliderData[index].sub}" alt="صورة فرعية" class="w-full rounded-[12px] sub-slider" />
                 <div class="flex justify-between items-center">
-                  <p
-                    class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-baloo text-[16px] md:text-[20px] font-normal leading-[29px] md:leading-[35px] opacity-85"
-                  >
+                  <p class="w-[45px] h-[30px] md:w-[52px] md:h-[36px] text-mainColor font-baloo text-[16px] md:text-[20px] font-normal leading-[29px] md:leading-[35px] opacity-85">
                     ${SliderData[index].name}
                   </p>
-
                   <div class="flex w-fit text-yellow-400 text-[16px] space-x-1">
-                    <span>★</span><span>★</span><span>★</span><span>★</span
-                    ><span>★</span>
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </div>
                 </div>
-
-                <p
-                  class="w-[129px] h-[30px] md:w-[138px] md:h-[36px] text-[#252525] text-[20px] md:text-[22px] leading-[29px] md:leading-[35px] font-semibold font-baloo"
-                >
-                ${SliderData[index].des}
+                <p class="w-[129px] h-[30px] md:w-[138px] md:h-[36px] text-[#252525] text-[20px] md:text-[22px] leading-[29px] md:leading-[35px] font-semibold font-baloo">
+                  ${SliderData[index].des}
                 </p>
-
                 <div class="flex items-center gap-2 w-[112px] md:w-[160px] h-[30px]">
-                  <span class="text-[#B70404] w-[58px] font-bold text-[16px] md:text-[18px]"
-                    >${SliderData[index].price}</span
-                  >
-                  <span
-                    class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px] "
-                    >${SliderData[index].oldPrice}</span
-                  >
+                  <span class="text-[#B70404] w-[58px] font-bold text-[16px] md:text-[18px]">${SliderData[index].price}</span>
+                  <span class="text-[#25252580] opacity-50 w-[49px] line-through text-[14px]">${SliderData[index].oldPrice}</span>
                 </div>
               </div>
-              <div id="arrow-left" class="size-6 md:size-10  cursor-pointer">
-                <img
-                  class="w-full  "
-                  src="./images/next-slider.svg"
-                  alt="next-slider"
-                />
+              <div id="arrow-left" class="size-6 md:size-10 cursor-pointer">
+                <img class="w-full rotate-180" src="./images/next-slider.svg" alt="previous-slider" />
               </div>
             </div>
           </div>
 
-          
-
-
-          <div
-            class="w-[353px] mt-[50px] h-[309px] md:w-[690px] lg:h-[604px] md:rounded-[32px]  rounded-[16px] relative overflow-hidden bg-white shadow-md"
-          >
-            <img class="size-full  min-slider"  src='   ${SliderData[index].main}  ' alt="products" />
-
-            <div
-              class="flex gap-1 w-[227px] h-[65px] mx-auto absolute bottom-5 left-1/2 -translate-x-1/2"
-            >
+          <div class="w-[353px] mt-[50px] h-[309px] md:w-[690px] lg:h-[604px] md:rounded-[32px] rounded-[16px] relative overflow-hidden bg-white shadow-md">
+            <img class="size-full min-slider" src="${SliderData[index].main}" alt="صورة رئيسية" />
+            <div class="flex gap-1 w-[227px] h-[65px] mx-auto absolute bottom-5 left-1/2 -translate-x-1/2">
               <div class="flex flex-col items-center">
-                <p
-                  class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo font-normal leading-5 bg-[#FFFFFF26] backdrop-blur-[5.115942478179932px] rounded-sm flex items-center justify-center"
-                >
-                  04
-                </p>
+                <p class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo bg-[#FFFFFF26] backdrop-blur-[5.11px] rounded-sm flex items-center justify-center">04</p>
                 <span class="text-white">ثانية</span>
               </div>
               <p class="text-2xl font-bold text-white">:</p>
               <div class="flex flex-col items-center">
-                <p
-                  class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo font-normal leading-5 bg-[#FFFFFF26] backdrop-blur-[5.115942478179932px] rounded-sm flex items-center justify-center"
-                >
-                  30
-                </p>
+                <p class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo bg-[#FFFFFF26] backdrop-blur-[5.11px] rounded-sm flex items-center justify-center">30</p>
                 <span class="text-white">دقيقة</span>
               </div>
               <p class="text-2xl font-bold text-white">:</p>
               <div class="flex flex-col items-center">
-                <p
-                  class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo font-normal leading-5 bg-[#FFFFFF26] backdrop-blur-[5.115942478179932px] rounded-sm flex items-center justify-center"
-                >
-                  06
-                </p>
+                <p class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo bg-[#FFFFFF26] backdrop-blur-[5.11px] rounded-sm flex items-center justify-center">06</p>
                 <span class="text-white">ساعة</span>
               </div>
               <p class="text-2xl font-bold text-white">:</p>
               <div class="flex flex-col items-center">
-                <p
-                  class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo font-normal leading-5 bg-[#FFFFFF26] backdrop-blur-[5.115942478179932px] rounded-sm flex items-center justify-center"
-                >
-                  08
-                </p>
+                <p class="w-[41.44px] h-[42.97px] text-white text-[20px] font-baloo bg-[#FFFFFF26] backdrop-blur-[5.11px] rounded-sm flex items-center justify-center">08</p>
                 <span class="text-white">يوم</span>
               </div>
             </div>
           </div>
-        </div>`;
+        </div>
+      `;
 
-    const arrowRight = document.querySelector("#arrow-right");
-    const arrowLeft = document.querySelector("#arrow-left");
+      mainSubSlider.style.opacity = 1;
 
-    arrowRight.addEventListener("click", (e) => {
-      e.preventDefault();
-      SliderIndexData =
-        SliderIndexData < SliderData.length - 1 ? SliderIndexData + 1 : 0;
-      console.log("sl", SliderIndexData);
+      // إعادة ربط الأسهم
+      document.querySelector("#arrow-right").addEventListener("click", (e) => {
+        e.preventDefault();
+        SliderIndexData =
+          SliderIndexData < SliderData.length - 1 ? SliderIndexData + 1 : 0;
+        changeSliderData(SliderIndexData);
+      });
 
-      changeSliderData(SliderIndexData);
-    });
-
-    arrowLeft.addEventListener("click", (e) => {
-      e.preventDefault();
-      SliderIndexData =
-        SliderIndexData === 0 ? SliderData.length - 1 : SliderIndexData - 1;
-      console.log("sl", SliderIndexData);
-
-      changeSliderData(SliderIndexData);
-    });
+      document.querySelector("#arrow-left").addEventListener("click", (e) => {
+        e.preventDefault();
+        SliderIndexData =
+          SliderIndexData === 0 ? SliderData.length - 1 : SliderIndexData - 1;
+        changeSliderData(SliderIndexData);
+      });
+    }, 400); // مدة الإخفاء قبل تغيير المحتوى
   }
+
   changeSliderData(SliderIndexData);
 });
 
-document.querySelectorAll(".des h3").forEach((heading) => {
-  heading.addEventListener("click", function () {
-    const allParagraphs = document.querySelectorAll(".des p");
-    const nextParagraph = this.nextElementSibling;
+
+// document.querySelectorAll(".des h3").forEach((heading) => {
+//   heading.addEventListener("click", function () {
+//     const allParagraphs = document.querySelectorAll(".des p");
+//     const nextParagraph = this.nextElementSibling;
 
     
 
-    allParagraphs.forEach((p) => {
-      if (p !== nextParagraph) {
-        p.style.display = "none";
-      }
-    });
+//     allParagraphs.forEach((p) => {
+//       if (p !== nextParagraph) {
+//         p.style.display = "none";
+//               p.style.opacity = "0";
 
-    if (nextParagraph.style.display === "block") {
-      nextParagraph.style.display = "none";
-    } else {
-      nextParagraph.style.display = "block";
+//       }
+//     });
+
+//     if (nextParagraph.style.display === "block") {
+//       nextParagraph.style.display = "none";
+//     } else {
+//       nextParagraph.style.display = "block";
+//       nextParagraph.style.opacity = "1";
+//     }
+//   });
+// });
+
+
+let activeIndex = -1;
+    function toggleAccordion(element, index) {
+      const paragraph = element.nextElementSibling;
+      const icon = element.querySelector('img');
+      const allParagraphs = document.querySelectorAll('.des p');
+      const allIcons = document.querySelectorAll('.des img');
+
+      // Close all other accordions
+      allParagraphs.forEach((p, i) => {
+        if (i !== index) {
+          p.classList.remove('max-h-32', 'opacity-100', 'py-4');
+          p.classList.add('max-h-0', 'opacity-0');
+          allIcons[i].style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle current accordion
+      if (activeIndex === index) {
+        // Close current
+        paragraph.classList.remove('max-h-32', 'opacity-100', 'py-4');
+        paragraph.classList.add('max-h-0', 'opacity-0');
+        icon.style.transform = 'rotate(0deg)';
+        activeIndex = -1;
+      } else {
+        // Open current
+        paragraph.classList.remove('max-h-0', 'opacity-0');
+        paragraph.classList.add('max-h-32', 'opacity-100', 'py-4');
+        icon.style.transform = 'rotate(45deg)';
+        activeIndex = index;
+      }
     }
-  });
-});
+    // Initialize first item as open
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const firstParagraph = document.querySelector('.des p');
+      const firstIcon = document.querySelector('.des img');
+      firstParagraph.classList.remove('max-h-0', 'opacity-0');
+      firstParagraph.classList.add('max-h-32', 'opacity-100', 'py-4');
+      firstIcon.style.transform = 'rotate(45deg)';
+      activeIndex = 0;
+    });
