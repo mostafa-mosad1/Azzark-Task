@@ -2617,14 +2617,6 @@ html {
     gap: 2rem;
   }
 
-  .md\:overflow-auto {
-    overflow: auto;
-  }
-
-  .md\:overscroll-none {
-    overscroll-behavior: none;
-  }
-
   .md\:rounded-2xl {
     border-radius: 1rem;
   }
