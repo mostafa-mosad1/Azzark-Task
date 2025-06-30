@@ -341,29 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// document.querySelectorAll(".des h3").forEach((heading) => {
-//   heading.addEventListener("click", function () {
-//     const allParagraphs = document.querySelectorAll(".des p");
-//     const nextParagraph = this.nextElementSibling;
-
-    
-
-//     allParagraphs.forEach((p) => {
-//       if (p !== nextParagraph) {
-//         p.style.display = "none";
-//               p.style.opacity = "0";
-
-//       }
-//     });
-
-//     if (nextParagraph.style.display === "block") {
-//       nextParagraph.style.display = "none";
-//     } else {
-//       nextParagraph.style.display = "block";
-//       nextParagraph.style.opacity = "1";
-//     }
-//   });
-// });
 
 
 let activeIndex = -1;
@@ -373,7 +350,6 @@ let activeIndex = -1;
       const allParagraphs = document.querySelectorAll('.des p');
       const allIcons = document.querySelectorAll('.des img');
 
-      // Close all other accordions
       allParagraphs.forEach((p, i) => {
         if (i !== index) {
           p.classList.remove('max-h-32', 'opacity-100', 'py-4');
@@ -382,22 +358,18 @@ let activeIndex = -1;
         }
       });
 
-      // Toggle current accordion
       if (activeIndex === index) {
-        // Close current
         paragraph.classList.remove('max-h-32', 'opacity-100', 'py-4');
         paragraph.classList.add('max-h-0', 'opacity-0');
         icon.style.transform = 'rotate(0deg)';
         activeIndex = -1;
       } else {
-        // Open current
         paragraph.classList.remove('max-h-0', 'opacity-0');
         paragraph.classList.add('max-h-32', 'opacity-100', 'py-4');
         icon.style.transform = 'rotate(45deg)';
         activeIndex = index;
       }
     }
-    // Initialize first item as open
     document.addEventListener('DOMContentLoaded', function () {
 
       const firstParagraph = document.querySelector('.des p');
